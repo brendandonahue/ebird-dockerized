@@ -1,0 +1,9 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "ebird api",
+  "main": "app.js",
+  "author": "Brendan Donahue",
+  "license": "MIT",
+  "private": true
+}

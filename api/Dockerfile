@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /server
+WORKDIR /api
 COPY package.json ./
 COPY ./ ./
 RUN yarn install
