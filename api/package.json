@@ -5,5 +5,8 @@
   "main": "app.js",
   "author": "Brendan Donahue",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  }
 }
