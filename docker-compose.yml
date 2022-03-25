@@ -15,10 +15,7 @@ services:
   api:
     build:
       dockerfile: Dockerfile
-      context: "./server"
-    volumes:
-      - /node_modules
-
+      context: "./api"
   client:
     stdin_open: true
     environment:
