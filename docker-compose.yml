@@ -33,5 +33,6 @@ services:
       dockerfile: Dockerfile
       context: ./client
     volumes:
-      - /app/node_modules
-      - ./client:/app
+      - /node_modules
+      - ./client:/public
+      - ./client:/src
