@@ -1,6 +1,17 @@
 version: '3.8'
 
 services:
+  client:
+      stdin_open: true
+      environment:
+        - CHOKIDAR_USEPOLLING=true
+      build:
+        dockerfile: Dockerfile
+        context: ./client
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: "./api"
   nginx:
     depends_on:
       - api
@@ -11,19 +22,3 @@ services:
       context: ./nginx
     ports:
       - "3050:80"
-
-  api:
-    build:
-      dockerfile: Dockerfile
-      context: "./api"
-  client:
-    stdin_open: true
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    build:
-      dockerfile: Dockerfile
-      context: ./client
-    volumes:
-      - /node_modules
-      - ./client:/public
-      - ./client:/src
