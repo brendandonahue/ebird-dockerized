@@ -2,5 +2,5 @@ FROM node:alpine
 WORKDIR /client
 COPY package.json ./
 COPY ./ ./
-RUN yarn install && yarn build
-COPY ./build /usr/share/nginx/html
+RUN yarn install && yarn global add serve
+RUN serve -l 3000 -s build
