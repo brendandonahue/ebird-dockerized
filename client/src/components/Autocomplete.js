@@ -17,7 +17,6 @@ const Autocomplete = (props) => {
     setFiltered(newFilteredSuggestions);
     setIsShow(true);
     setInput(e.currentTarget.value);
-    setShowChart(true);
   };
 const onClick = e => {
     setActive(0);
@@ -25,6 +24,7 @@ const onClick = e => {
     setIsShow(false);
     setInput(e.currentTarget.innerText);
     setSelectedBird(e.currentTarget.innerText);
+    setShowChart(true);
   };
 const onKeyDown = e => {
     if (e.keyCode === 13) { // enter key
@@ -32,6 +32,7 @@ const onKeyDown = e => {
       setIsShow(false);
       setInput(filtered[active]);
       setSelectedBird(filtered[active]);
+      setShowChart(true);
     }
     else if (e.keyCode === 38) { // up arrow
       return (active === 0) ? null : setActive(active - 1);
