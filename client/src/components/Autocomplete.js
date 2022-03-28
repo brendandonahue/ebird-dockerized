@@ -4,7 +4,7 @@ const Autocomplete = (props) => {
   const [filtered, setFiltered] = useState([]);
   const [isShow, setIsShow] = useState(false);
   const [input, setInput] = useState("");
-  const { setSelectedBird } = props;
+  const { setSelectedBird, setShowChart } = props;
   
   const onChange = e => {
     const { suggestions } = props;
@@ -17,6 +17,7 @@ const Autocomplete = (props) => {
     setFiltered(newFilteredSuggestions);
     setIsShow(true);
     setInput(e.currentTarget.value);
+    setShowChart(true);
   };
 const onClick = e => {
     setActive(0);
